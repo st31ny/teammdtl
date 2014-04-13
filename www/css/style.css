@@ -1,0 +1,149 @@
+@CHARSET "UTF-8";
+
+body {
+background-color:#f1f1f1;
+font-family: georgia,sans-serif;
+color:#333;
+margin:0;
+padding:0;
+}
+
+h1 {
+	font-size:300%;
+	padding-bottom: 30px;
+	padding-top:50px;
+}
+h2 {
+    font-size:200%;
+    padding-bottom: 20px;
+    padding-top:30px;
+}
+h3 {
+    font-size:150%;
+    padding-bottom: 15px;
+    padding-top:25px;
+}
+h4 {
+    font-size:125%;
+    padding-bottom: 10px;
+    padding-top:20px;
+}
+h5 {
+    font-size:100%;
+    padding-bottom: 10px;
+    padding-top:20px;
+    font-weight: bold;
+}
+
+p {
+	padding-bottom: 10px;
+	text-align: justify;
+}
+
+#wrapper {
+width:960px;
+background-color:#f8f8f8;
+margin:0 auto;
+border-left:1px solid #ccc;
+border-right:1px solid #ccc;
+}
+
+#header {
+width:960px;
+height:135px;
+margin:0 auto;
+margin-bottom:25px;
+border-bottom:1px solid #ccc;
+border-top:1px solid #ccc;
+}
+
+#header h1 {
+padding:50px;
+}
+
+#nav {
+    width:940px;
+    height:40px;
+    border-bottom:1px solid #ccc;
+    padding-left:20px;
+}
+
+#nav a {
+display:inline;
+padding:10px;
+text-decoration:none;
+background-color:#f1f1f1;
+}
+
+#nav a:hover {
+background-color:#bababa;
+height:80px;
+}
+
+#content {
+width:675px;
+float:left;
+padding:15px;
+}
+
+#sidebar {
+width:200px;
+float:right;
+margin-bottom:25px;
+}
+
+#sidebar a {
+text-decoration:none;
+}
+
+#sidebar li {
+list-style:none;
+}
+
+#footer {
+clear:both;
+width:960px;
+height:135px;
+border-top:1px solid #ccc;
+border-bottom:1px solid #ccc;
+}
+
+#footer p {
+    padding:10px;
+    font-variant: small-caps;
+    font-size: 90%;
+}
+
+#footer #time {
+    font-style:italic;
+    font-size: 80%;
+}
+
+#content .box {
+    margin: 20px auto;
+    width: 600px;
+    padding: 15px;
+    position:relative;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius:20px;
+    background: white;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+}
+#content .box * {
+	margin: 0;
+	padding: 0;
+}
+
+#content .box.success {
+    background: #507D1F;
+    color: white;
+    font-size: 130%
+}
+
+#content .box.fail {
+    background: #9C0909;
+    color: white;
+    font-size: 130%
+}
