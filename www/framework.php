@@ -27,12 +27,18 @@ function __autoload( $classname )
  */
 $config = new Config();
 
+/// Load database definition
+require_once str_replace( '$', $config->db[ 'type' ], $SETUP['path']['db'] );
+
 /**
  * @brief	Provides site-wide functions for all other pages
  *
  */
 class Framework
 {
+    // cached database object
+    private $db;
+
     /**
      * Get the singleton class.
      * @return  Reference to the Framework object
@@ -159,6 +165,23 @@ class Framework
     }
 
     /**
+     * Get an IDb object to access the database
+     * @return  Reference to the IDb object
+     */
+    public function getDb()
+    {
+        global $config;
+
+        if( is_null( $this->db ) ) {
+            $cnf = $config->db;
+            $name = 'Db'.$cnf['type'];
+            $this->db = new $name( $cnf['host'], $cnf['user'], $cnf['pass'], $cnf['dbname'] );
+        }
+
+        return $this->db;
+    }
+
+    /**
      * Reset fromget value. Should be done after each usage of formget
      */
     public function resetFormget()
@@ -170,19 +193,4 @@ class Framework
 
 }
 
-/*
- // verify successful login
-if( ! isset( $_SESSION['login'] ) ) {
-?>
-<p style="color:red;">
-Login erforderlich!
-<p>
-<p>
-<? echo '<a href="'.$config->login.'?ret='.$_SERVER['PHP_SELF'].'">Login</a>'; ?>
-</p>
-
-<?
-exit;
-} // if( !( isset( $_SESSION['login'] ) )
-        //*/
 ?>

@@ -9,10 +9,19 @@ class Config {
 
     var $default_page = 'index';
 
+    /// Database configuration
+    var $db = array (
+            'type' => 'Mysqli',
+            'host' => 'localhost',
+            'user' => 'usename',
+            'pass' => 'secret',
+            'dbname' => 'my_database'
+            );
+
     /// Page configuration
     // page names mapping on arrays
     var $pconfig = array(
-            
+
         );
 };
 
